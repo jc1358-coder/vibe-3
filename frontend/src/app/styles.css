@@ -1,0 +1,162 @@
+:root {
+  color: #172126;
+  background: #f4f1e8;
+  font-family: "Aptos", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 40px;
+  background:
+    radial-gradient(circle at 12% 14%, rgba(18, 95, 95, 0.16), transparent 30%),
+    linear-gradient(135deg, #f4f1e8 0%, #dfe9df 52%, #f7c873 100%);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(260px, 0.6fr);
+  gap: 24px;
+  align-items: stretch;
+  margin-bottom: 28px;
+}
+
+.hero-card,
+.status-card,
+.feature-card {
+  border: 1px solid rgba(23, 33, 38, 0.14);
+  border-radius: 28px;
+  background: rgba(255, 253, 246, 0.78);
+  box-shadow: 0 20px 60px rgba(23, 33, 38, 0.12);
+}
+
+.hero-card {
+  padding: 36px;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: #19535f;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  max-width: 780px;
+  font-size: clamp(40px, 7vw, 84px);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.lead {
+  max-width: 720px;
+  margin: 22px 0 0;
+  color: #526067;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.status-card {
+  padding: 24px;
+}
+
+.status-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(23, 33, 38, 0.12);
+}
+
+.status-row:last-child {
+  border-bottom: 0;
+}
+
+.status-label {
+  color: #66747b;
+}
+
+.status-value {
+  font-weight: 800;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.feature-card {
+  min-height: 220px;
+  padding: 22px;
+}
+
+.feature-card h2 {
+  margin: 12px 0;
+  font-size: 22px;
+}
+
+.feature-card p {
+  margin: 0;
+  color: #5d6a70;
+  line-height: 1.6;
+}
+
+.feature-index {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  color: #fffdf6;
+  background: #172126;
+  font-weight: 800;
+}
+
+.endpoint-note {
+  margin-top: 28px;
+  color: #4d5b62;
+  font-size: 14px;
+}
+
+@media (max-width: 980px) {
+  .app-shell {
+    padding: 22px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
