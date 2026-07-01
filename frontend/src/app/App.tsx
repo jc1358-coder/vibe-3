@@ -1,5 +1,5 @@
-import { DashboardPage } from "../pages/DashboardPage";
+import { SchedulePage } from "../features/schedules/SchedulePage";
 
 export function App() {
-  return <DashboardPage />;
+  return <SchedulePage />;
 }

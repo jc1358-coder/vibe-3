@@ -33,8 +33,7 @@ export function DashboardPage() {
           <p className="eyebrow">Public Administration Super App</p>
           <h1>공공직군 행정업무 슈퍼앱</h1>
           <p className="lead">
-            팀 일정, 엑셀 업무 자동화, 민원 대응 챗봇, 공공 행정 뉴스 수집을 하나의 업무
-            포털로 묶기 위한 초기 스캐폴드입니다.
+            팀 일정, 엑셀 업무 자동화, 민원 대응 챗봇, 공공 행정 뉴스 수집을 하나의 업무 포털로 묶기 위한 초기 화면입니다.
           </p>
         </div>
 
