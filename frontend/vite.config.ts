@@ -1,5 +1,11 @@
-import { defineConfig } from "vite";
+﻿import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+
+declare const process: {
+  env: {
+    GITHUB_PAGES_BASE?: string;
+  };
+};
 
 const basePath = process.env.GITHUB_PAGES_BASE ?? "/";
 
@@ -13,3 +19,4 @@ export default defineConfig({
     }
   }
 });
+
