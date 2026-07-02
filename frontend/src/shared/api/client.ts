@@ -1,9 +1,14 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "";
+﻿import { getApiBaseUrl } from "./baseUrl";
 
 type RequestBody = Record<string, unknown>;
 
+function buildUrl(path: string): string {
+  const baseUrl = getApiBaseUrl().replace(/\/+$/, "");
+  return `${baseUrl}${path}`;
+}
+
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
-  const response = await fetch(`${API_BASE_URL}${path}`, {
+  const response = await fetch(buildUrl(path), {
     headers: {
       "Content-Type": "application/json",
       ...init?.headers
@@ -19,7 +24,7 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
         message = body.detail;
       }
     } catch {
-      // JSON 오류 본문이 아닐 때는 기본 메시지를 사용한다.
+      // 응답 본문이 JSON이 아닐 수 있으므로 기본 메시지를 사용한다.
     }
     throw new Error(message);
   }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { featureSummaries } from "../features/featureSummaries";
 import { getSystemStatus, type SystemStatus } from "../shared/api/system";
 
@@ -30,18 +30,18 @@ export function DashboardPage() {
     <main className="app-shell">
       <section className="hero">
         <div className="hero-card">
-          <p className="eyebrow">Public Administration Super App</p>
-          <h1>공공직군 행정업무 슈퍼앱</h1>
+          <p className="eyebrow">공공행정 통합 앱</p>
+          <h1>공공 행정 업무 도우미</h1>
           <p className="lead">
-            팀 일정, 엑셀 업무 자동화, 민원 대응 챗봇, 공공 행정 뉴스 수집을 하나의 업무 포털로 묶기 위한 초기 화면입니다.
+            일정, 엑셀 자동화, 민원 응대, 공공 정책 뉴스 수집을 한곳에서 처리하기 위한 초기 화면입니다.
           </p>
         </div>
 
         <aside className="status-card">
-          <p className="eyebrow">Integration Check</p>
+          <p className="eyebrow">연동 확인</p>
           <div className="status-list">
-            <StatusRow label="FE" value="React/Vite ready" />
-            <StatusRow label="BE API" value={error ? "연결 실패" : status?.api ?? "확인 중"} />
+            <StatusRow label="프론트" value="React/Vite 준비됨" />
+            <StatusRow label="백엔드 API" value={error ? "연결 실패" : status?.api ?? "확인 중"} />
             <StatusRow label="SQLite" value={error ? "확인 불가" : status?.database ?? "확인 중"} />
           </div>
           {error && <p className="endpoint-note">오류: {error}</p>}
@@ -59,7 +59,7 @@ export function DashboardPage() {
       </section>
 
       <p className="endpoint-note">
-        FE-BE 연동 확인: <code>/api/health</code>, BE-DB 연동 확인: <code>/api/health/db</code>
+        프론트-백엔드 연동 확인: <code>/api/health</code>, 백엔드-DB 연동 확인: <code>/api/health/db</code>
       </p>
     </main>
   );
